@@ -38,7 +38,7 @@ public class ParkingDb {
         // наступні 3 рядки забезпечують ефективнішу роботу методу,
         // який гарантує створення одного екземпляру цього класу
         if (instance == null) {
-            synchronized (ParkingService.class) {
+            synchronized (ParkingDb.class) {
                 if (instance == null) {
                     instance = new ParkingDb();
                 }
