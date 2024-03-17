@@ -16,12 +16,12 @@ import java.util.Map;
 public class ParkingDb {
 
     private static volatile ParkingDb instance;
-    private final Map<String, Car> cars = new HashMap<>();
+    private final Map<String, Car> cars;
 
     //TODO: Розкоментуй рядок 22 і закоментуй рядок 23
 //    public ParkingDb() {
     private ParkingDb() {
-
+        cars = new HashMap<>();
     }
 
     /**
