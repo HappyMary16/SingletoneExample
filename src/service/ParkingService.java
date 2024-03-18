@@ -20,11 +20,12 @@ public class ParkingService {
     /**
      * Конструктор класу.
      *
-     * @param parkingDb
-     * @param parkingSize
+     * @param parkingSize розмір парковки
      */
-    private ParkingService(ParkingDb parkingDb, int parkingSize) {
-        this.parkingDb = parkingDb;
+    private ParkingService(int parkingSize) {
+        //TODO: Розкоментуй рядок 27 і закоментуй рядок 28
+//        this.parkingDb = new ParkingDb();
+        this.parkingDb = ParkingDb.newInstance();
         this.parkingSize = parkingSize;
     }
 
@@ -43,9 +44,7 @@ public class ParkingService {
      */
     public static synchronized ParkingService newInstance(int parkingSize) {
         if (instance == null) {
-            //TODO: Розкоментуй рядок 45 і закоментуй рядок 46
-//            instance = new ParkingService(new ParkingDb(), parkingSize);
-            instance = new ParkingService(ParkingDb.newInstance(), parkingSize);
+            instance = new ParkingService(parkingSize);
         }
 
         return instance;

@@ -18,11 +18,11 @@ public class StatisticService {
 
     /**
      * Конструктор класу.
-     *
-     * @param parkingDb обʼєкт класу ParkingDb з яким працюватиме цей сервіс.
      */
-    public StatisticService(ParkingDb parkingDb) {
-        this.parkingDb = parkingDb;
+    public StatisticService() {
+        //TODO: Розкоментуй рядок 24 і закоментуй рядок 25
+//        this.parkingDb = new ParkingDb();
+        this.parkingDb = ParkingDb.newInstance();
     }
 
     /**
