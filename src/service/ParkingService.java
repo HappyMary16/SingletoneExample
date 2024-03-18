@@ -5,8 +5,10 @@ import model.Car;
 
 /**
  * Відповідальний за всі дії, які можуть відбуватися на парковці:
+ * <pre>
  * - паркування автомобілів
  * - видалення автомобілів з парковки
+ * </pre>
  */
 public class ParkingService {
 
@@ -36,8 +38,8 @@ public class ParkingService {
      * <p>
      * Ключове слово synchronized гарантує, що метод виконуватиметься одночасно в одному потоці.
      *
-     * @param parkingSize - розмір парковки з яким буде створено обʼєкт, якщо обʼєкт класу ще не створений
-     * @return - створений або вже існуючий обʼєкт цього класу
+     * @param parkingSize розмір парковки з яким буде створено обʼєкт, якщо обʼєкт класу ще не створений
+     * @return створений або вже існуючий обʼєкт цього класу
      */
     public static synchronized ParkingService newInstance(int parkingSize) {
         if (instance == null) {
@@ -52,7 +54,7 @@ public class ParkingService {
     /**
      * Додає автомобіль на парковку, якщо ще є вільне місце.
      *
-     * @param car - автомобіль, який треба припаркувати
+     * @param car автомобіль, який треба припаркувати
      * @return true - якщо автомобіль вдалося припаркувати,
      * false - якщо на парковці не було місця для автомобіля
      */
@@ -68,7 +70,7 @@ public class ParkingService {
     /**
      * Видаляє автомобіль з парковки.
      *
-     * @param carNumber - номер автомобіля, який потрібно видалити
+     * @param carNumber номер автомобіля, який потрібно видалити
      */
     public void removeCar(String carNumber) {
        parkingDb.removeCar(carNumber);
