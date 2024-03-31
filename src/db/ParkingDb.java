@@ -1,7 +1,6 @@
 package db;
 
 import model.Car;
-import service.ParkingService;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -34,7 +33,7 @@ public class ParkingDb {
      *
      * @return - створений або вже існуючий обʼєкт цього класу
      */
-    public static ParkingDb newInstance() {
+    public static ParkingDb getInstance() {
         // наступні 3 рядки забезпечують ефективнішу роботу методу,
         // який гарантує створення одного екземпляру цього класу
         if (instance == null) {

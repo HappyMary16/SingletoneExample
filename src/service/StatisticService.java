@@ -22,7 +22,7 @@ public class StatisticService {
     public StatisticService() {
         //TODO: Розкоментуй рядок 24 і закоментуй рядок 25
 //        this.parkingDb = new ParkingDb();
-        this.parkingDb = ParkingDb.newInstance();
+        this.parkingDb = ParkingDb.getInstance();
     }
 
     /**

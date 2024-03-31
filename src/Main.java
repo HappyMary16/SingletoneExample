@@ -7,7 +7,7 @@ import java.time.Instant;
 public class Main {
     
     public static void main(String[] args) {
-        ParkingService parkingService = ParkingService.newInstance(10);
+        ParkingService parkingService = ParkingService.getInstance(10);
         StatisticService statisticService = new StatisticService();
 
         Car car = new Car("AA1111AA", Instant.now());

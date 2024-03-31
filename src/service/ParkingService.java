@@ -25,7 +25,7 @@ public class ParkingService {
     private ParkingService(int parkingSize) {
         //TODO: Розкоментуй рядок 27 і закоментуй рядок 28
 //        this.parkingDb = new ParkingDb();
-        this.parkingDb = ParkingDb.newInstance();
+        this.parkingDb = ParkingDb.getInstance();
         this.parkingSize = parkingSize;
     }
 
@@ -42,7 +42,7 @@ public class ParkingService {
      * @param parkingSize розмір парковки з яким буде створено обʼєкт, якщо обʼєкт класу ще не створений
      * @return створений або вже існуючий обʼєкт цього класу
      */
-    public static synchronized ParkingService newInstance(int parkingSize) {
+    public static synchronized ParkingService getInstance(int parkingSize) {
         if (instance == null) {
             instance = new ParkingService(parkingSize);
         }
