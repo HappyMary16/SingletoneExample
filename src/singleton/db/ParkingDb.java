@@ -1,6 +1,6 @@
-package db;
+package singleton.db;
 
-import model.Car;
+import singleton.model.Car;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -14,13 +14,35 @@ import java.util.Map;
  */
 public class ParkingDb {
 
+    /**
+     * Зберігає в собі створений обʼєкт класу ParkingDb і повертає його
+     * під час виклику методу getInstance().
+     */
     private static volatile ParkingDb instance;
     private final Map<String, Car> cars;
 
-    //TODO: Розкоментуй рядок 22 і закоментуй рядок 23
-//    public ParkingDb() {
     private ParkingDb() {
         cars = new HashMap<>();
+    }
+
+    /**
+     * Метод який створює обʼєкт класу, гарантуючи що буде
+     * створений тільки один обʼєкт для всієї програми.
+     * Тобто цей клас реалізує патерн Singleton.
+     * <p>
+     * Конструктор має модифікатор доступу private для того,
+     * щоб ніде крім цього методу не можна було створити ще один обʼєкт цього класу.
+     * <p>
+     * Ключове слово synchronized гарантує, що метод виконуватиметься одночасно в одному потоці.
+     *
+     * @return створений або вже існуючий обʼєкт цього класу
+     */
+    public static synchronized ParkingDb getInstance() {
+        if (instance == null) {
+            instance = new ParkingDb();
+        }
+
+        return instance;
     }
 
     /**
@@ -33,7 +55,7 @@ public class ParkingDb {
      *
      * @return - створений або вже існуючий обʼєкт цього класу
      */
-    public static ParkingDb getInstance() {
+    public static ParkingDb getInstanceBetterImplementation() {
         // наступні 3 рядки забезпечують ефективнішу роботу методу,
         // який гарантує створення одного екземпляру цього класу
         if (instance == null) {

@@ -1,7 +1,7 @@
-package service;
+package nopatterns.service;
 
-import db.ParkingDb;
-import model.Car;
+import nopatterns.db.ParkingDb;
+import nopatterns.model.Car;
 
 import java.time.Instant;
 
@@ -20,9 +20,7 @@ public class StatisticService {
      * Конструктор класу.
      */
     public StatisticService() {
-        //TODO: Розкоментуй рядок 24 і закоментуй рядок 25
-//        this.parkingDb = new ParkingDb();
-        this.parkingDb = ParkingDb.getInstance();
+        this.parkingDb = new ParkingDb();
     }
 
     /**

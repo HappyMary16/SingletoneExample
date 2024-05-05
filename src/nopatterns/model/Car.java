@@ -1,4 +1,4 @@
-package model;
+package nopatterns.model;
 
 import java.time.Instant;
 
@@ -18,5 +18,13 @@ public class Car {
 
     public Instant getParkingTime() {
         return parkingTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carNumber='" + carNumber + '\'' +
+                ", parkingTime=" + parkingTime +
+                '}';
     }
 }
