@@ -4,7 +4,7 @@
                                         |
     Керування контеустом           DIService
                                     /      \
-    Сервіси               ParkingService   ParkingDb
+    Сервіси              ParkingService   StatisticService
                                     \      /   
     Керування сховищем              ParkingDb
                                         |

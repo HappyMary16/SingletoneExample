@@ -2,7 +2,7 @@
 
     Головний клас                     Main
                                     /      \
-    Сервіси               ParkingService   ParkingDb
+    Сервіси              ParkingService   StatisticService
                                     \      /   
     Керування сховищем              ParkingDb
                                         |
